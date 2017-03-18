@@ -17,13 +17,15 @@
 #include <time.h>
 
 #define SIZE 10
+ 
+int max, min,randd[SIZE];
+
 /* Function Prototypes */
-void MaxMin( int num, int vals[], int * min, int * max);
+void MaxMin(int num, int vals[], int * min, int * max);
 
 /* Main Program */
 int main(int argc, char *argv[])
 {
-	int max, min, randd[SIZE];
 	MaxMin ( SIZE, randd, &min, &max);
 
 	return 0;
@@ -32,14 +34,32 @@ int main(int argc, char *argv[])
 
 /* Function Definitions */
 
-
-void MaxMin( int num, int vals[], int * min, int * max)
-{
-	srand(time(NULL));
-	for ( int i = 0; i < num ; i ++)
-	{	
+void MaxMin(int num, int vals[], int * min, int * max)
+{	
+	int vals[10];
+	//assume the first element as maximu and minimum
+	//Hugo made mention of something like this using a tunnel reference
+	min = vals[0];
+	max = vals[0];
+	//use the loop to find the max and min in the array
+	srand((unsigned)time(NULL));
+	for (int i = 0; i < num; i ++)
+	{
+		num = 0;  
 		vals[i] = rand();
+		printf("The list is: \n");
 		printf(" %d\n ", vals[i]);
+		if (vals[i] > *max)
+		{
+			max = vals[i];
+		}
+		else if (vals[i] < *min)
+		{
+			min = vals[i];
+		}
 	}
+	printf("The maximum value is %d\n", max);
+	printf("The minimum value is %d\n", min);
+
 	return;
 }

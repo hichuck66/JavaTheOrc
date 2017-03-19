@@ -26,7 +26,6 @@ void MaxMin(int num, int vals[], int * min, int * max);
 int main(int argc, char *argv[])
 {
 	int max, min,randd[SIZE];
-	 //randd  = { 0,0,0,0,0,0,0,0,0,0};
 	MaxMin ( SIZE, randd, &min, &max);
 
 	return 0;
@@ -37,19 +36,19 @@ int main(int argc, char *argv[])
 
 void MaxMin(int num, int vals[], int * min, int * max)
 {	
-	//int vals[10];
-	//assume the first element as maximu and minimum
+	//assume the first element as maximum and minimum
 	//Hugo made mention of something like this using a tunnel reference
-	//use the loop to find the max and min in the array
-	
-	*min = vals[0];
-	*max = vals[0];
-	printf("The list is: \n");
+	//use the loop to find the max and min through the array
+
+
 	srand((unsigned)time(NULL));
-	for (int i = 0; i < num; i ++)
+
+	printf("The list is: \n");
+	for (int i = 0; i < SIZE; i++)
 	{
-	//	num = 0;  
-		vals[i] = rand();
+		*max = vals[0];
+		*min = vals[0];
+		vals[i] = 10 + (int) (rand() % (100- 10 + 1));//range from 10 - 100//
 		printf(" %d\n ", vals[i]);
 		if (vals[i] > *max)
 		{

@@ -46,10 +46,13 @@ void MaxMin(int num, int vals[], int * min, int * max)
 	printf("The list is: \n");
 	for (int i = 0; i < SIZE; i++)
 	{
-		*max = vals[0];
-		*min = vals[0];
 		vals[i] = 10 + (int) (rand() % (100- 10 + 1));//range from 10 - 100//
 		printf(" %d\n ", vals[i]);
+		if (i == 0)
+		{
+			*max = vals[0];
+			*min = vals[0];
+		}
 		if (vals[i] > *max)
 		{
 			*max = vals[i];

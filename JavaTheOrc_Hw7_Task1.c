@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
 	// this is a test
 	copy_arr ( target1, source, LEN);
 	copy_ptr ( target2, source, LEN);
-	printf(" %lf\n", target1[4]);
-	printf(" %lf\n", target2[4]);
 	return 0;
 }
 
@@ -43,18 +41,23 @@ int main(int argc, char *argv[])
 
 void copy_arr (double ar1[], const double ar2[], int n)
 {	
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < LEN; i++)
 	{
-		ar1[i] = ar2 [i];
+		ar1[i] = ar2[i];
+		printf("source array:[%lf]\n", ar1[i]);
 	}
 	return;
 }
 
 void copy_ptr (double *ar1, const double *ar2, int n)
 {	
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < LEN; i++)
 	{
-		ar1[i] = ar2 [i];
+		ar1[0] = *ar1;
+		ar1[1] = *[ar1++];
+		ar1[2] = *[ar1++];
+		ar1[3] = *[ar1++];
+		ar1[4] = *[ar1++];
 	}
 	return;
 }

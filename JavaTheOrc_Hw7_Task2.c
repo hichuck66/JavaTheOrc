@@ -35,21 +35,21 @@ int main(int argc, char *argv[])
 /* Function Definitions */
 
 void MaxMin(int num, int vals[], int * min, int * max)
-{	
+{
 	//assume the first element as maximum and minimum
 	//Hugo made mention of something like this using a tunnel reference
 	//use the loop to find the max and min through the array
-
-
 	srand((unsigned)time(NULL));
 
-	printf("The list is: \n");
+	*max = vals[0];
+	*min = vals[0];
+
+	printf("The list is:\n");
 	for (int i = 0; i < SIZE; i++)
 	{
-		*max = vals[0];
-		*min = vals[0];
 		vals[i] = 10 + (int) (rand() % (100- 10 + 1));//range from 10 - 100//
 		printf(" %d\n ", vals[i]);
+
 		if (vals[i] > *max)
 		{
 			*max = vals[i];

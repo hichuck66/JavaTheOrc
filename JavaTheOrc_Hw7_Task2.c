@@ -41,23 +41,17 @@ void MaxMin(int num, int vals[], int * min, int * max)
 	//use the loop to find the max and min through the array
 	srand((unsigned)time(NULL));
 
-	*max = vals[0];
-	*min = vals[0];
-
 	printf("The list is:\n");
 	for (int i = 0; i < SIZE; i++)
 	{
 		vals[i] = 10 + (int) (rand() % (100- 10 + 1));//range from 10 - 100//
 		printf(" %d\n ", vals[i]);
-<<<<<<< HEAD
 
-=======
 		if (i == 0)
 		{
 			*max = vals[0];
 			*min = vals[0];
 		}
->>>>>>> 1b8d9843cc9360c42524613c2c8c6312efa78fe1
 		if (vals[i] > *max)
 		{
 			*max = vals[i];

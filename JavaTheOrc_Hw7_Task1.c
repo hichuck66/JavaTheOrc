@@ -53,11 +53,10 @@ void copy_ptr (double *ar1, const double *ar2, int n)
 {	
 	for (int i = 0; i < LEN; i++)
 	{
-		ar1[0] = *ar1;
-		ar1[1] = *[ar1++];
-		ar1[2] = *[ar1++];
-		ar1[3] = *[ar1++];
-		ar1[4] = *[ar1++];
+		*(ar1) = *(ar2);
+		printf("source array:[%lf]\n", *ar1++);
+		ar1++;
+		ar2++;
 	}
 	return;
 }

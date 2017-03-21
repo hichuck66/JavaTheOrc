@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	// this is a test
 	copy_arr ( target1, source, LEN);
 	copy_ptr ( target2, source, LEN);
-	copy_ptrs ( target3, source, sizeof(source)/sizeof(double));
+	copy_ptrs ( target3, source, source[LEN]);
 	return 0;
 }
 
@@ -66,14 +66,11 @@ void copy_ptr (double *ar1, const double *ar2, int n)
 
 void copy_ptrs (double *ar1, const double *start, const double * end)
 {
-	int p = 0;
-	while (p <= end)
+	while (*start < *end)
 	{
 		*(ar1) = *(start);
 		printf("source array:[%lf]\n", *start++);
 		start++;
-		end++;
-		p++;
 
 	}
 	return;

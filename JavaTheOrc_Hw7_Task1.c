@@ -19,7 +19,7 @@
 void copy_arr (double ar1[], const double ar2[], int n);
 void copy_ptr (double *ar1, const double *ar2, int n);
 void copy_ptrs (double *ar1, const double *start, const double * end);
-void Show ( double ar []);
+void Show_arr(double ar [], int n);
 
 /* Main Program */
 int main(int argc, char *argv[])
@@ -29,17 +29,18 @@ int main(int argc, char *argv[])
 	double target1[LEN];
 	double target2[LEN];
 	double target3[LEN];
-//	double target3[LEN];
 
-	// this is a test
 	printf("source arry: ");
-	Show ( source);
+	Show (source);
+
 	copy_arr ( target1, source, LEN);
 	printf("copied by subscript: ");
-	Show(target1);
+	Show (target1);
+
 	copy_ptr ( target2, source, LEN);
 	printf("copied by pointer: ");
 	Show(target2);
+
 	copy_ptrs ( target3, source, &source[LEN]);
 	printf("copied using pointer range: ");
 	Show(target3);
@@ -65,7 +66,7 @@ void copy_ptr (double *ar1, const double *ar2, int n)
 	for (int i = 0; i < LEN; i++)
 	{
 		*(ar1) = *(ar2);
-		printf("source 1111array:[%lf]\n", *ar1);
+		printf("source array:[%lf]\n", *ar1);
 		ar1++;
 		ar2++;
 	}
@@ -78,7 +79,7 @@ void copy_ptrs (double *ar1, const double *start, const double * end)
 	while (*start != *end)
 	{
 		*(ar1) = *(start);
-		printf("source 222222array:[%lf]\n", *ar1);
+		printf("source array:[%lf]\n", *ar1);
 		start++;
 		ar1++;
 
@@ -86,9 +87,7 @@ void copy_ptrs (double *ar1, const double *start, const double * end)
 	return;
 }
 
-
-
-void Show ( double ar [])
+void Show_arr(double ar [], int n)
 {
 	for (int i = 0; i < LEN; i++)
 	{

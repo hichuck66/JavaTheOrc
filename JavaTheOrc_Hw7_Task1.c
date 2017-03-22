@@ -31,19 +31,19 @@ int main(int argc, char *argv[])
 	double target3[LEN];
 
 	printf("source arry: ");
-	Show (source);
+	Show_arr (source, (sizeof(source)/sizeof(double)));
 
 	copy_arr ( target1, source, LEN);
 	printf("copied by subscript: ");
-	Show (target1);
+	Show_arr (target1, (sizeof(target1)/sizeof(double)));
 
 	copy_ptr ( target2, source, LEN);
 	printf("copied by pointer: ");
-	Show(target2);
+	Show_arr (target2, (sizeof(target2)/sizeof(double)));
 
 	copy_ptrs ( target3, source, &source[LEN]);
 	printf("copied using pointer range: ");
-	Show(target3);
+	Show_arr (target3, (sizeof(target3)/sizeof(double)));
 	return 0;
 }
 
@@ -89,7 +89,7 @@ void copy_ptrs (double *ar1, const double *start, const double * end)
 
 void Show_arr(double ar [], int n)
 {
-	for (int i = 0; i < LEN; i++)
+	for (int i = 0; i < n; i++)
 	{
 		printf( "%.2lf " , *ar);
 		ar++;

@@ -56,7 +56,6 @@ void copy_arr (double ar1[], const double ar2[], int n)
 	for (int i = 0; i < LEN; i++)
 	{
 		ar1[i] = ar2[i];
-		printf("source array:[%lf]\n", ar1[i]);
 	}
 	return;
 }
@@ -66,7 +65,6 @@ void copy_ptr (double *ar1, const double *ar2, int n)
 	for (int i = 0; i < LEN; i++)
 	{
 		*(ar1) = *(ar2);
-		printf("source array:[%lf]\n", *ar1);
 		ar1++;
 		ar2++;
 	}
@@ -79,7 +77,6 @@ void copy_ptrs (double *ar1, const double *start, const double * end)
 	while (*start != *end)
 	{
 		*(ar1) = *(start);
-		printf("source array:[%lf]\n", *ar1);
 		start++;
 		ar1++;
 
